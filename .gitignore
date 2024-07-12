@@ -1,3 +1,7 @@
 venv
 
 target/
+
+__pycache__
+
+.vscode
