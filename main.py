@@ -1,4 +1,4 @@
-from export import parser, reader
+from export import parser, reader, writer
 
 
 def main() -> None:
@@ -9,7 +9,8 @@ def main() -> None:
         for file in files:
             i += 1
             content = reader.get_html_content(file)
-            parser.find_all_messages(content)
+            messages = parser.find_all_messages(content)
+            writer.append_messages_to_csv(messages)
             print(f"File no {i}/{len(files)}")
 
 if __name__ == "__main__":
